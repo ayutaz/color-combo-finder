@@ -58,14 +58,25 @@ color-combo-finder/
 └── vite.config.ts
 ```
 
+## デモ
+
+公開 URL: **https://ayutaz.github.io/color-combo-finder/**
+
 ## ステータス
 
-**実装前**。現時点では要求定義のみがコミットされています。
+M0 / M1 ともに完了。
 
-開発フェーズ:
+- **M0**: 基盤 + CI/CD パイプライン（Vite 雛形 + GitHub Actions + Pages デプロイ） — 達成
+- **M1**: コア機能（色計算ロジック + 最小 UI） — 達成
 
-- **M0**: 基盤 + CI/CD パイプライン（Vite 雛形 + GitHub Actions + Pages デプロイを通す）
-- **M1**: コア機能（色計算ロジック + 最小 UI）
+## 開発
+
+```sh
+pnpm install
+pnpm dev         # 開発サーバー
+pnpm test        # 単体テスト
+pnpm build       # 本番ビルド
+```
 
 詳細は [`docs/requirements/09-milestones.md`](./docs/requirements/09-milestones.md) を参照。
 

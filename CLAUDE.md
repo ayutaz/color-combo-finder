@@ -89,7 +89,21 @@ color-combo-finder/
 
 ## 現在のステータス
 
-**実装前**。要求定義のみ存在。`package.json` / ビルドコマンドは未定義。実装着手後にこの CLAUDE.md の「ビルド・テストコマンド」セクションを追記すること。
+M0 / M1 ともに完了。公開 URL: https://ayutaz.github.io/color-combo-finder/
+
+## ビルド・テストコマンド
+
+| コマンド | 用途 |
+| --- | --- |
+| `pnpm install` | 依存をインストール |
+| `pnpm dev` | Vite 開発サーバー起動 |
+| `pnpm build` | 型チェック + 本番ビルド (`dist/`) |
+| `pnpm preview` | 本番ビルドの確認サーバー |
+| `pnpm test` | Vitest を 1 回実行 |
+| `pnpm test:watch` | Vitest をウォッチモードで実行 |
+| `pnpm exec tsc --noEmit` | 型チェックのみ |
+
+個別のテストファイルを実行: `pnpm test src/color/harmony.test.ts`
 
 ## 作業手順
 
