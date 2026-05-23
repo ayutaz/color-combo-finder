@@ -1,0 +1,23 @@
+{
+  "name": "color-combo-finder",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/culori": "^2.1.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "culori": "^4.0.1"
+  },
+  "packageManager": "pnpm@10.32.1"
+}

@@ -1,0 +1,21 @@
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #fafafa;
+  color: #212121;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
