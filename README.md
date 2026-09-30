@@ -5,9 +5,9 @@
 > **このプロジェクトは技術調査・試作が主目的です。**
 > 商用品質のフルスペックなツールではなく、色彩理論の組み合わせアルゴリズム、CIEDE2000 による近傍色マッピング、GitHub Actions + GitHub Pages の CI/CD を最小コードで動かして理解することを目的にしています。
 
-## できること（予定）
+## できること
 
-- HEX で指定したベースカラーに対して、以下の組み合わせを計算
+- HEX（テキスト入力またはカラーピッカー）で指定したベースカラーに対して、以下の組み合わせを計算
   - 補色（Complementary）
   - 類似色（Analogous）
   - トライアド（Triadic）
@@ -42,14 +42,14 @@
 | CI/CD | GitHub Actions |
 | ホスティング | GitHub Pages |
 
-## プロジェクト構成（想定）
+## プロジェクト構成
 
 ```
 color-combo-finder/
 ├── .github/workflows/ci.yml   # テスト + Pages デプロイ
 ├── docs/requirements/         # 要求定義一式
 ├── src/
-│   ├── color/                 # 色計算（UI 非依存）
+│   ├── color/                 # 色計算（UI 非依存、*.test.ts が単体テスト）
 │   ├── palettes.ts            # サンプルパレット
 │   ├── ui.ts                  # DOM 操作
 │   └── main.ts
@@ -71,12 +71,17 @@ M0 / M1 ともに完了。
 
 ## 開発
 
+CI と同じく Node.js 24 と pnpm 10（`package.json` の `packageManager` で固定）を想定しています。
+
 ```sh
 pnpm install
 pnpm dev         # 開発サーバー
-pnpm test        # 単体テスト
-pnpm build       # 本番ビルド
+pnpm test        # 単体テスト（Vitest）
+pnpm build       # 型チェック + 本番ビルド（dist/）
+pnpm preview     # 本番ビルドの確認
 ```
+
+`main` への push で `.github/workflows/ci.yml` が型チェック・テスト・ビルドを行い、GitHub Pages へデプロイします。
 
 詳細は [`docs/requirements/09-milestones.md`](./docs/requirements/09-milestones.md) を参照。
 
